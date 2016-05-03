@@ -7,7 +7,7 @@ layout: default
   </h1>
   <nav class="masthead-nav">
     {% for nav in site.nav %}
-    <a href="{{ nav.href }}">{{ nav.name }}</a>
+    <a href="{{ nav.href }}">{{ nav.name | capitalize }}</a>
     {% endfor %}
   </nav>
 </header>

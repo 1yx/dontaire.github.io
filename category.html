@@ -1,0 +1,29 @@
+---
+layout: default
+title: Category
+permalink: /category/
+
+sitemap:
+priority: .5
+---
+
+{% for category in site.categories %}
+{% assign t = category | first %}
+{% assign posts = category | last %}
+
+<a name="{{t | downcase | replace:" ","-" }}"></a>
+<h3>{{ t | capitalize }}</h3>
+<ul>
+  {% for post in posts %}
+  {% if post.categories contains t %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <span class="post-date">
+      <time>{{ post.date | date: "%B %-d, %Y" }}</time>
+    </span>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+{% endfor %}
