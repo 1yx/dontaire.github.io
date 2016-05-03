@@ -1,0 +1,39 @@
+# Basic
+name:               "東太热"
+
+# URL
+baseurl:            ""
+permalink:          /:year/:month/:day/:title.html
+
+# Markdown
+markdown:           rdiscount
+
+# Navigation
+nav:
+  - name:           "豆瓣"
+    href:           "//www.douban.com/people/soiitaire/"
+  - name:           "Github"
+    href:           "//github.com/dontaire"
+
+# Sass
+sass:
+  style:            :compressed
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+
+# Filtering Content
+future: false
+unpublished: false
