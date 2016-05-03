@@ -6,11 +6,12 @@ permalink: /tag/
 sitemap:
 priority: .5
 ---
-
+{% if site.tags.size == 0 %}
+<h2>No tag found</h2>
+{% else %}
 {% for tag in site.tags %}
 {% assign t = tag | first %}
 {% assign posts = tag | last %}
-
 <a name="{{t | downcase | replace:" ","-" }}"></a>
 <h3>{{ t | capitalize }}</h3>
 <ul>
@@ -25,5 +26,5 @@ priority: .5
   {% endif %}
   {% endfor %}
 </ul>
-
 {% endfor %}
+{% endif %}

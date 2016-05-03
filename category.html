@@ -6,11 +6,12 @@ permalink: /category/
 sitemap:
 priority: .5
 ---
-
+{% if site.categories.size == 0 %}
+<h2>No category found</h2>
+{% else %}
 {% for category in site.categories %}
 {% assign t = category | first %}
 {% assign posts = category | last %}
-
 <a name="{{t | downcase | replace:" ","-" }}"></a>
 <h3>{{ t | capitalize }}</h3>
 <ul>
@@ -25,5 +26,5 @@ priority: .5
   {% endif %}
   {% endfor %}
 </ul>
-
 {% endfor %}
+{% endif %}
